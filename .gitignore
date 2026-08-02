@@ -1,0 +1,9 @@
+/target
+qrcodes/
+*.png
+*.jpg
+*.svg
+*.txt
+config.toml
+history.json
+.DS_Store

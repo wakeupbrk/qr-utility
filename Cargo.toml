@@ -1,0 +1,45 @@
+[package]
+name = "qr-utility"
+version = "0.1.0"
+edition = "2021"
+authors = ["amar"]
+description = "A terminal utility written in Rust for generating dynamic QR codes with expiration and custom styling."
+
+[lib]
+name = "qr_utility"
+path = "src/lib.rs"
+
+[[bin]]
+name = "qru"
+path = "src/main.rs"
+
+[dependencies]
+# CLI & TUI
+clap = { version = "4.5", features = ["derive", "env"] }
+ratatui = "0.29"
+crossterm = "0.28"
+
+# QR Code & Image Generation
+qrcode = "0.14"
+image = { version = "0.25", features = ["png", "jpeg"] }
+
+# Async & Networking (Local Redirect Server)
+tokio = { version = "1.40", features = ["full"] }
+async-trait = "0.1"
+axum = "0.8"
+tower-http = { version = "0.6", features = ["cors"] }
+
+# Serialization & Utilities
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+anyhow = "1.0"
+thiserror = "2.0"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.10", features = ["v4", "serde"] }
+arboard = "3.4"
+open = "5.3"
+csv = "1.3"
+directories = "5.0"
+url = "2.5"
+regex = "1.10"
